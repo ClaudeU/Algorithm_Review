@@ -1,0 +1,13 @@
+ball_num = int(input())
+all_ball= []
+
+for i in range(ball_num):
+    ball_color, ball_size = map(int, input().split())
+    all_ball.append([ball_color, ball_size])
+    
+for i in range(ball_num):
+    i_can = []
+    for g in range(ball_num):
+        if all_ball[i][0] != all_ball[g][0] and all_ball[i][1] > all_ball[g][1]:
+            i_can.append(all_ball[g][1])
+    print(sum(i_can))
